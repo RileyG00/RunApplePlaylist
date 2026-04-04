@@ -1,8 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Threading;
 using AppleMusicPlayer.Configurations;
 using Microsoft.Extensions.Configuration;
 
@@ -64,7 +61,6 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
     int tabsRequired = 1; 
     string tabCommands = string.Concat(Enumerable.Repeat("$wshell.SendKeys('{TAB}'); Start-Sleep -Milliseconds 200; ", tabsRequired));
 
-    // We removed the flaky COM AppActivate. The window is now activated natively by C# right before execution.
     string psCommand = 
         "$wshell = New-Object -ComObject WScript.Shell; " +
         "Start-Sleep -Milliseconds 800; " +
