@@ -58,7 +58,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
     }
 
     // --- WINDOWS AUTOMATION (PowerShell) ---
-    int tabsRequired = 1; 
+    const int tabsRequired = 2; 
     string tabCommands = string.Concat(Enumerable.Repeat("$wshell.SendKeys('{TAB}'); Start-Sleep -Milliseconds 200; ", tabsRequired));
 
     string psCommand = 
